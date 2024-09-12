@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+  font-family: "SUIT", sans-serif;
+
+  .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    .bar {
+      width: 10vw;
+      height: 105vh;
+      background: #1a1a1a;
+    }
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    font-family: "IBM Plex Mono", monospace;
+    z-index: 100;
+    div {
+      display: flex;
+      padding: 1em;
+      gap: 10em;
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
+    }
+  }
+
+  .container {
+    section {
+      width: 100%;
+      height: 100vh;
+      padding: 5vw;
+      box-sizing: border-box;
+
+      &.hero {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 7rem 4rem;
+
+        > div {
+          font-size: 10vw;
+          color: #1a1a1a;
+          line-height: 1.125;
+          font-weight: 600;
+          font-style: italic;
+          font-family: "Roboto Condensed", sans-serif;
+          letter-spacing: -0.5vw;
+        }
+      }
+
+      &.about {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-align: center;
+        line-height: 1.5;
+        letter-spacing: -0.8px;
+        .inner {
+          position: relative;
+          p {
+          }
+          .about-img1 {
+            width: 100px;
+            position: absolute;
+            top: -40px;
+            left: -90px;
+            border-radius: 6%;
+            transform: rotate(10deg);
+            transition: transform 0.3s ease;
+            &:hover {
+              transform: scale(2);
+            }
+          }
+
+          .about-img2 {
+            width: 100px;
+            position: absolute;
+            top: 100px;
+            right: -120px;
+            border-radius: 6%;
+            transform: rotate(-7deg);
+            transition: transform 0.3s ease;
+            &:hover {
+              transform: scale(2);
+            }
+          }
+        }
+      }
+
+      &.skills {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .inner {
+          ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 50px 40px;
+            li {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 100px;
+                padding: 2px;
+                background-color: #ffffff;
+                border-radius: 30%;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+                  rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+                transition: transform 0.3s ease;
+                &:hover {
+                  transform: scale(0.9);
+                }
+              }
+              h2 {
+                font-family: "Roboto Condensed", sans-serif;
+                font-weight: 600;
+                font-size: 3rem;
+                font-style: italic;
+                letter-spacing: -1px;
+              }
+            }
+          }
+        }
+      }
+
+      &.projects {
+        min-height: 100vh;
+        overflow: hidden;
+        padding: 0;
+      }
+
+      &.contact {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .inner {
+          h2 {
+            font-family: "Roboto Condensed", sans-serif;
+            font-weight: 600;
+            font-size: 3rem;
+            font-style: italic;
+            letter-spacing: -1px;
+            text-align: center;
+            padding-bottom: 5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  width: 600%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  font-family: "SUIT Variable", sans-serif;
+  line-height: 1.3;
+  font-size: 16px;
+  letter-spacing: -0.8px;
+  scroll-snap-type: x mandatory;
+}
+
+.logo {
+  font-size: 8rem;
+  position: fixed;
+  z-index: 10;
+  top: 15%;
+  left: 4rem;
+  line-height: 0.9;
+  font-family: "Bebas Neue", cursive;
+}
+
+section.intro,
+section.project {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding-left: 10rem;
+  scroll-snap-align: start;
+}
+
+section.project::before {
+  content: "";
+  width: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.block {
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+}
+
+.project img {
+  width: 50vw;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transform: translateY(-100%);
+}
+
+.title {
+  position: absolute;
+  top: 13.5rem;
+  right: 15rem;
+  font-size: 2rem;
+  transform: translateY(-200%);
+  letter-spacing: -1px;
+  font-weight: 500;
+}
+
+.description {
+  position: absolute;
+  top: 18.5rem;
+  right: 8.5rem;
+  width: 30%;
+  font-weight: 400;
+  color: #444;
+  transform: translate(100%, 100%);
+  font-size: 1.3rem;
+}
+
+.description .caption {
+  line-height: 1.5;
+}
+
+.buttons {
+  margin-top: 4rem;
+}
+
+.buttons::before,
+.buttons::after {
+  content: "";
+  color: #000000;
+}
