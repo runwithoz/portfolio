@@ -34,73 +34,34 @@ gsap.to(".overlay", 1.5, {
   ease: "power4.inOut",
 });
 
-let tl = gsap.timeline({
+gsap.from(".skills img", {
   scrollTrigger: {
-    trigger: ".skills h2",
-    start: "top 80%",
-    end: "top 20%",
-    scrub: false,
-    markers: true,
-  },
-});
-
-tl.from(
-  ".skills h2",
-  {
-    opacity: 0,
-  },
-  "+=1"
-)
-  .from(
-    ".skills h2",
-    {
-      x: -110,
-      fontSize: "6rem",
-    },
-    "+=0.2"
-  )
-  .from(
-    ".skills img",
-    {
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.5,
-      ease: "power1.inOut",
-    },
-    "+=0.3"
-  ); // 첫 번째 애니메이션 이후 0.5초 대기 후 두 번째 실행
-
-//화면에 보이면 나타나게
-gsap.from(".op1", {
-  scrollTrigger: {
-    trigger: ".op1",
-    start: "top 60%",
-    end: "top 20%",
-    scrub: false,
-    markers: true,
-  },
-  opacity: 0,
-  stagger: 0.1,
-  duration: 1, // 애니메이션 지속 시간 추가
-  ease: "power1.inOut", // 애니메이션 속도 조절
-});
-
-/* projects 섹션 */
-const container = document.querySelector(".p-container");
-const sections = gsap.utils.toArray(".p-container .section");
-/* const texts = gsap.utils.toArray(".anim");
-const mask = document.querySelector(".mask"); */
-
-let scrollTween = gsap.to(sections, {
-  yPercent: -100 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".projects",
+    trigger: ".skills",
     pin: true,
-    scrub: 1,
-    end: "+=" + sections.length * 100 + "vh",
+    start: "top",
+    end: "bottom",
+    scrub: true,
     markers: true,
   },
+  opacity: 0.1,
+  stagger: 0.1,
+});
+
+const aboutText = new SplitType(".about p");
+
+gsap.from(aboutText.chars, {
+  scrollTrigger: {
+    trigger: ".about",
+    pin: true,
+    pinSpacing: false,
+    start: "top",
+    end: "bottom",
+    scrub: true,
+    markers: true,
+  },
+  opacity: 0.1,
+  duration: 0,
+  stagger: 0.1,
 });
 
 const lenis = new Lenis();
@@ -116,25 +77,17 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-/* ///////////// */
+const pSections = gsap.utils.toArray(".projects section");
 
-const sections2 = gsap.utils.toArray(".projects section");
-
-let scrollTween2 = gsap.to(sections2, {
-  xPercent: -100 * (sections2.length - 1),
+let pScrollTween = gsap.to(pSections, {
+  xPercent: -100 * (pSections.length - 1),
   ease: "none",
   scrollTrigger: {
     trigger: ".projects",
     pin: true,
     scrub: 1.5,
     start: "top top",
-    end: 5000,
-    snap: {
-      snapTo: 1 / (sections2.length - 1),
-      duration: 0.1,
-      delay: 0,
-      ease: "power3.inOut",
-    },
+    end: 7000,
   },
 });
 
@@ -154,7 +107,7 @@ document.querySelectorAll(".project").forEach((el) => {
     y: 0,
     ease: "none",
     scrollTrigger: {
-      containerAnimation: scrollTween2,
+      containerAnimation: pScrollTween,
       trigger: el.querySelector(".title"),
       start: "top bottom",
       end: "+=10%",
@@ -166,22 +119,10 @@ document.querySelectorAll(".project").forEach((el) => {
     y: 0,
     ease: "none",
     scrollTrigger: {
-      containerAnimation: scrollTween2,
+      containerAnimation: pScrollTween,
       trigger: el.querySelector("img"),
       start: "top bottom",
       end: "+=50%",
-      scrub: 0.5,
-    },
-  });
-
-  gsap.to(el.querySelector(".description"), {
-    x: 0,
-    y: 0,
-    scrollTrigger: {
-      containerAnimation: scrollTween2,
-      trigger: el.querySelector(".description"),
-      start: "top bottom",
-      end: "+=150",
       scrub: 0.5,
     },
   });

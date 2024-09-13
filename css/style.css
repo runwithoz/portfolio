@@ -39,6 +39,9 @@ body nav div a {
   text-decoration: none;
   color: #000000;
 }
+body .container {
+  overflow-y: auto;
+}
 body .container section {
   width: 100%;
   height: 100vh;
@@ -63,7 +66,7 @@ body .container section.hero > div {
 }
 body .container section.about {
   width: 100%;
-  height: 50vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,6 +75,7 @@ body .container section.about {
   text-align: center;
   line-height: 1.5;
   letter-spacing: -0.8px;
+  margin-bottom: 100vh;
 }
 body .container section.about .inner {
   position: relative;
@@ -198,20 +202,10 @@ section.project::before {
   bottom: 0;
 }
 
-.block {
-  width: 50%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  transform: translateX(-100%);
-}
-
 .project img {
   width: 50vw;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  transform: translateY(-100%);
+  /* transform: translateY(-100%); */
 }
 
 .title {
@@ -219,7 +213,7 @@ section.project::before {
   top: 13.5rem;
   right: 15rem;
   font-size: 2rem;
-  transform: translateY(-200%);
+  /* transform: translateY(-200%); */
   letter-spacing: -1px;
   font-weight: 500;
 }
@@ -231,7 +225,7 @@ section.project::before {
   width: 30%;
   font-weight: 400;
   color: #444;
-  transform: translate(100%, 100%);
+  /* transform: translate(100%, 100%); */
   font-size: 1.3rem;
 }
 
