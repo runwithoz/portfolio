@@ -297,6 +297,7 @@ section.project::before {
   align-content: flex-start;
   overflow: hidden;
   z-index: 10000;
+  opacity: 0;
 }
 
 .block {

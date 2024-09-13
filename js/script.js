@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const word = new SplitType(".word");
 
 gsap.from(".word .char", 1.5, {
-  delay: 1,
+  delay: 0,
   y: 700,
   stagger: {
     amount: 0.5,
@@ -41,7 +41,7 @@ gsap.from(".skills img", {
     start: "top",
     end: "bottom",
     scrub: true,
-    markers: true,
+    markers: false,
   },
   opacity: 0.1,
   stagger: 0.1,
@@ -57,7 +57,7 @@ gsap.from(aboutText.chars, {
     start: "top",
     end: "bottom",
     scrub: true,
-    markers: true,
+    markers: false,
   },
   opacity: 0.1,
   duration: 0,
@@ -135,7 +135,18 @@ gsap.to(".bg", {
     start: "top 30%",
     end: "top 20%",
     scrub: 0.5,
-    markers: true,
+    markers: false,
+  },
+});
+
+gsap.to("#blocks", {
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".contact",
+    start: "top 30%",
+    scrub: true,
+    end: "top 20%",
+    markers: false,
   },
 });
 
