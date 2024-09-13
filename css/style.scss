@@ -6,8 +6,9 @@ body {
   overflow-x: hidden;
   background: #ffffff;
   font-family: "SUIT", sans-serif;
+  color: #1f1f1f;
 
-  .overlay {
+  /*   .overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -18,7 +19,7 @@ body {
       height: 105vh;
       background: #1a1a1a;
     }
-  }
+  } */
 
   nav {
     position: fixed;
@@ -35,7 +36,7 @@ body {
       gap: 10em;
       a {
         text-decoration: none;
-        color: #000000;
+        color: #111111;
       }
     }
   }
@@ -56,7 +57,6 @@ body {
 
         > div {
           font-size: 10vw;
-          color: #1a1a1a;
           line-height: 1.125;
           font-weight: 600;
           font-style: italic;
@@ -77,6 +77,7 @@ body {
         line-height: 1.5;
         letter-spacing: -0.8px;
         margin-bottom: 100vh;
+        color: #2a7c1f;
         .inner {
           position: relative;
           p {
@@ -156,10 +157,10 @@ body {
 
       &.contact {
         width: 100%;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-
         .inner {
           h2 {
             font-family: "Roboto Condensed", sans-serif;
@@ -258,4 +259,17 @@ section.project::before {
 .buttons::after {
   content: "";
   color: #000000;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: -100;
 }

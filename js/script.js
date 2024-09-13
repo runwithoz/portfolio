@@ -16,23 +16,23 @@ gsap.from(".word .char", 1.5, {
   ease: "power4.inOut",
 });
 
-gsap.to(".bar", 1.5, {
+/* gsap.to(".bar", 1.5, {
   delay: 0.5,
   height: 0,
   stagger: {
     amount: 0.5,
   },
   ease: "power4.inOut",
-});
+}); */
 
-gsap.to(".overlay", 1.5, {
+/* gsap.to(".overlay", 1.5, {
   delay: 0.5,
   height: 0,
   stagger: {
     amount: 0.5,
   },
   ease: "power4.inOut",
-});
+}); */
 
 gsap.from(".skills img", {
   scrollTrigger: {
@@ -126,4 +126,15 @@ document.querySelectorAll(".project").forEach((el) => {
       scrub: 0.5,
     },
   });
+});
+
+gsap.to(".bg", {
+  opacity: 1,
+  scrollTrigger: {
+    trigger: ".contact",
+    start: "top 30%",
+    end: "top 20%",
+    scrub: 0.5,
+    markers: true,
+  },
 });
