@@ -8,18 +8,6 @@ body {
   background: #ffffff;
   font-family: "SUIT", sans-serif;
   color: #1f1f1f;
-  /*   .overlay {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: 2;
-    display: flex;
-    .bar {
-      width: 10vw;
-      height: 105vh;
-      background: #1a1a1a;
-    }
-  } */
 }
 body nav {
   position: fixed;
@@ -63,6 +51,7 @@ body .container section.hero > div {
   font-style: italic;
   font-family: "Roboto Condensed", sans-serif;
   letter-spacing: -0.5vw;
+  z-index: -100;
 }
 body .container section.about {
   width: 100%;
@@ -79,30 +68,17 @@ body .container section.about {
 }
 body .container section.about .inner {
   position: relative;
+  display: flex;
+  gap: 3rem;
 }
-body .container section.about .inner .about-img1 {
-  width: 100px;
-  position: absolute;
-  top: -40px;
-  left: -90px;
-  border-radius: 6%;
-  transform: rotate(10deg);
-  transition: transform 0.3s ease;
+body .container section.about .inner img {
+  width: 30vw;
+  height: 30vw;
 }
-body .container section.about .inner .about-img1:hover {
-  transform: scale(2);
-}
-body .container section.about .inner .about-img2 {
-  width: 100px;
-  position: absolute;
-  top: 100px;
-  right: -120px;
-  border-radius: 6%;
-  transform: rotate(-7deg);
-  transition: transform 0.3s ease;
-}
-body .container section.about .inner .about-img2:hover {
-  transform: scale(2);
+body .container section.about .inner p {
+  font-size: 4.5rem;
+  letter-spacing: -1px;
+  font-weight: 600;
 }
 body .container section.skills {
   width: 100%;
@@ -123,13 +99,10 @@ body .container section.skills .inner ul li {
 body .container section.skills .inner ul li img {
   width: 100px;
   padding: 2px;
-  background-color: #ffffff;
-  border-radius: 30%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
   transition: transform 0.3s ease;
 }
 body .container section.skills .inner ul li img:hover {
-  transform: scale(0.9);
+  transform: scale(0.8);
 }
 body .container section.skills .inner ul li h2 {
   font-family: "Roboto Condensed", sans-serif;
@@ -273,9 +246,22 @@ section.project::before {
   height: 100%;
   background-color: #85ffbd;
   background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
-  opacity: 0;
+  opacity: 1;
   transition: all 0.5s;
   z-index: -100;
+}
+
+.bg-noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://runwithoz.github.io/ex_img/bg_texture.png");
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  transition: all 0.5s;
+  z-index: -90;
 }
 
 .blocks-container {
@@ -297,7 +283,7 @@ section.project::before {
   align-content: flex-start;
   overflow: hidden;
   z-index: 10000;
-  opacity: 0;
+  opacity: 1;
 }
 
 .block {
@@ -309,5 +295,5 @@ section.project::before {
 
 .highlight {
   background-color: rgba(255, 251, 125, 0.5);
-  /* border-color: #1dfb55; */
+  border-color: rgba(255, 255, 255, 0.5);
 }/*# sourceMappingURL=style.css.map */
