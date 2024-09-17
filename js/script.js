@@ -33,7 +33,7 @@ gsap.from(aboutText.chars, {
   stagger: 0.1,
 });
 
-gsap.from('.skills img', {
+/* gsap.from('.skills img', {
   scrollTrigger: {
     trigger: '.skills',
     pin: true,
@@ -45,7 +45,7 @@ gsap.from('.skills img', {
   duration: 0.3,
   opacity: 0.1,
   stagger: 0.1,
-});
+}); */
 
 const lenis = new Lenis();
 
@@ -72,8 +72,10 @@ gsap.to('.bg', {
   },
 });
 
-gsap.to('#blocks', {
+gsap.to('.blocks-container', {
   opacity: 0,
+  zIndex: -100,
+  pointerEvents: 'none',
   scrollTrigger: {
     trigger: '.hero',
     start: 'top',
