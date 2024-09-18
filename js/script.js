@@ -1,30 +1,30 @@
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
 }
 window.scrollTo(0, 0);
 
 gsap.registerPlugin(ScrollTrigger);
 
-const word = new SplitType('.word');
+const word = new SplitType(".word");
 
-gsap.from('.word .char', 1.5, {
+gsap.from(".word .char", 1.5, {
   delay: 0,
   y: 700,
   stagger: {
     amount: 0.5,
   },
-  ease: 'power4.inOut',
+  ease: "power4.inOut",
 });
 
-const aboutText = new SplitType('.about p');
+const aboutText = new SplitType(".about p");
 
 gsap.from(aboutText.chars, {
   scrollTrigger: {
-    trigger: '.about',
+    trigger: ".about",
     pin: true,
     pinSpacing: false,
-    start: 'top',
-    end: 'bottom',
+    start: "top",
+    end: "bottom",
     scrub: true,
     markers: false,
   },
@@ -49,7 +49,7 @@ gsap.from(aboutText.chars, {
 
 const lenis = new Lenis();
 
-lenis.on('scroll', (e) => {
+lenis.on("scroll", (e) => {
   console.log(e);
 });
 
@@ -60,34 +60,34 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-gsap.to('.bg', {
-  backgroundColor: '#ffffff',
-  backgroundImage: 'linear-gradient(45deg, #ffffff 0%, #ffffff 100%)',
+gsap.to(".bg", {
+  backgroundColor: "#ffffff",
+  backgroundImage: "linear-gradient(45deg, #ffffff 0%, #ffffff 100%)",
   scrollTrigger: {
-    trigger: '.hero',
-    start: 'top',
-    end: 'bottom',
+    trigger: ".hero",
+    start: "top",
+    end: "bottom",
     scrub: 0.5,
     markers: false,
   },
 });
 
-gsap.to('.blocks-container', {
+gsap.to(".blocks-container", {
   opacity: 0,
   zIndex: -100,
-  pointerEvents: 'none',
+  pointerEvents: "none",
   scrollTrigger: {
-    trigger: '.hero',
-    start: 'top',
+    trigger: ".hero",
+    start: "top",
     scrub: true,
-    end: 'bottom',
+    end: "bottom",
     markers: false,
   },
 });
 
 /* //////////////////////////////////////////////////// */
 
-window.addEventListener('DOMContentLoaded', () => {
+/* window.addEventListener('DOMContentLoaded', () => {
   const blockContainer = document.getElementById('blocks');
   const blockSize = 50;
   const screenWidth = window.innerWidth;
@@ -151,4 +151,55 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   createBlocks();
+}); */
+
+const pSections = gsap.utils.toArray(".projects section");
+
+let pScrollTween = gsap.to(pSections, {
+  xPercent: -100 * (pSections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".projects",
+    pin: true,
+    scrub: 0.1,
+    start: "top top",
+    end: 7000,
+  },
+});
+
+gsap.to(".logo", {
+  fontSize: "2.5rem",
+  top: "4rem",
+  scrollTrigger: {
+    trigger: ".logo",
+    start: "top top",
+    end: 1500,
+    scrub: 0.5,
+  },
+});
+
+document.querySelectorAll(".project").forEach((el) => {
+  gsap.to(el.querySelector(".title"), {
+    y: 0,
+    ease: "none",
+    scrollTrigger: {
+      containerAnimation: pScrollTween,
+      trigger: el.querySelector(".title"),
+      start: "top bottom",
+      end: "+=10%",
+      scrub: 0.5,
+    },
+  });
+
+  gsap.to(el.querySelector("img"), {
+    y: 0,
+    ease: "none",
+    scrollTrigger: {
+      containerAnimation: pScrollTween,
+      trigger: el.querySelector("img"),
+      start: "top bottom",
+      end: "+=50%",
+      scrub: 0.5,
+    },
+  });
 });
