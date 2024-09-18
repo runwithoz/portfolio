@@ -47,6 +47,19 @@ gsap.from(aboutText.chars, {
   stagger: 0.1,
 }); */
 
+gsap.from(".skills .row", {
+  scrollTrigger: {
+    trigger: ".skills .row",
+    start: "top 80%",
+    end: "top 20%",
+    scrub: true,
+    markers: false,
+  },
+  duration: 0.1,
+  y: 100,
+  stagger: 0.1,
+});
+
 const lenis = new Lenis();
 
 lenis.on("scroll", (e) => {

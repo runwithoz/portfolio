@@ -67,7 +67,32 @@
       <section class="skills">
         <div class="inner">
           <h2>Skills</h2>
-          <ul>
+
+          <div class="container">
+            <div class="row">
+              <img src="./images/logo-html.svg" alt="html" />
+              <img src="./images/logo-css.svg" alt="css" />
+              <img src="./images/logo-javascript.svg" alt="javascript" />
+              <img src="./images/logo-react.svg" alt="react" />
+              <img src="./images/logo-nextjs.svg" alt="next.js" />
+            </div>
+            <div class="row">
+              <img src="./images/logo-vuejs.svg" alt="vue.js" />
+              <img src="./images/logo-jquery.svg" alt="jquery" />
+              <img src="./images/logo-git.svg" alt="git" />
+              <img src="./images/logo-github.svg" alt="github" />
+              <img src="./images/logo-mysql.svg" alt="mysql" />
+            </div>
+            <div class="row">
+              <img src="./images/logo-mongodb.svg" alt="mongodb" />
+              <img src="./images/logo-php.svg" alt="php" />
+              <img src="./images/logo-sass.svg" alt="sass" />
+              <img src="./images/logo-bootstrap.svg" alt="bootstrap" />
+              <img src="./images/logo-figma.svg" alt="figma" />
+            </div>
+          </div>
+
+          <!-- <ul>
             <li><img src="./images/logo-html.svg" alt="html" /></li>
             <li><img src="./images/logo-css.svg" alt="css" /></li>
             <li>
@@ -91,7 +116,7 @@
             </li>
 
             <li><img src="./images/logo-figma.svg" alt="figma" /></li>
-          </ul>
+          </ul> -->
         </div>
       </section>
       <section class="projects">
@@ -107,6 +132,7 @@
               <div class="p-index">PROJECT 01</div>
               <div class="title">박물관 웹사이트 리뉴얼</div>
               <div class="caption">
+                TECH STACK : <br /><br />
                 수원화성 박물관의 홈페이지를 리뉴얼했습니다. 기능 구현에는
                 jQuery에 초점을 맞췄습니다. 관공서 사이트에 주로 들어가는
                 여러가지 요소들을 구현하기 위해 노력했습니다. 날씨와 미세먼지
@@ -118,16 +144,18 @@
           </section>
 
           <section class="project">
-            <img src="./images/img-museum-project.png" alt="" />
+            <img src="./images/Frame 58.png" alt="" />
             <div class="description">
-              <div class="title">박물관 웹사이트 리뉴얼</div>
+              <div class="p-index">PROJECT 02</div>
+              <div class="title">반응형 웹사이트 제작</div>
               <div class="caption">
-                수원화성 박물관의 홈페이지를 리뉴얼했습니다. 기능 구현에는
-                jQuery에 초점을 맞췄습니다. 관공서 사이트에 주로 들어가는
-                여러가지 요소들을 구현하기 위해 노력했습니다. 날씨와 미세먼지
-                현황, 오시는 길의 지도를 구현해보면서 다양한 web API들을 어떻게
-                사용해야하는지 배울수 있었습니다. php와 MySQL을 사용하여
-                회원가입/로그인과 게시판의 CRUD 기능을 구현했습니다.
+                TECH STACK : <br /><br />수원화성 박물관의 홈페이지를
+                리뉴얼했습니다. 기능 구현에는 jQuery에 초점을 맞췄습니다. 관공서
+                사이트에 주로 들어가는 여러가지 요소들을 구현하기 위해
+                노력했습니다. 날씨와 미세먼지 현황, 오시는 길의 지도를
+                구현해보면서 다양한 web API들을 어떻게 사용해야하는지 배울수
+                있었습니다. php와 MySQL을 사용하여 회원가입/로그인과 게시판의
+                CRUD 기능을 구현했습니다.
               </div>
             </div>
           </section>
@@ -135,6 +163,8 @@
           <section class="project">
             <img src="./images/img-museum-project.png" alt="" />
             <div class="description">
+              <div class="p-index">PROJECT 03</div>
+
               <div class="title">박물관 웹사이트 리뉴얼</div>
               <div class="caption">
                 수원화성 박물관의 홈페이지를 리뉴얼했습니다. 기능 구현에는
@@ -150,11 +180,33 @@
       </section>
       <section class="contact">
         <div class="inner">
-          <h2>Contact me</h2>
-          <div>
-            <ul>
-              <li>E-MAIL : hzxcvmm@gmail.com</li>
-            </ul>
+          <div class="col1">
+            <h2>Contact me</h2>
+            <div>
+              <ul>
+                <li><i class="fa-regular fa-at"></i></li>
+                <li><i class="fa-solid fa-phone"></i></li>
+                <li><i class="fa-brands fa-github"></i></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col2">
+            <form class="contact-form" action="" method="">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <button type="submit">Send Message</button>
+            </form>
           </div>
         </div>
       </section>
