@@ -37,22 +37,22 @@
     <!-- <div class="bg-noise"></div> -->
     <nav>
       <div>
-        <a href="#">TOP</a>
-        <a href="#">ABOUT</a>
-        <a href="#">SKILLS</a>
-        <a href="#">PROJECTS</a>
-        <a href="#">CONTACT</a>
+        <a href="#hero">TOP</a>
+        <a href="#about">ABOUT</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
       </div>
       <div>
         <a href="#">FRONT-END DEVELOPER</a>
       </div>
     </nav>
     <div class="container">
-      <section class="hero">
+      <section class="hero" id="hero">
         <div class="word">KIM HYEONGMI</div>
         <div class="word">PORTFOLIO</div>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="inner">
           <img src="https://runwithoz.github.io/ex_img/picture.jpg" alt="" />
           <p>
@@ -64,7 +64,7 @@
           </p>
         </div>
       </section>
-      <section class="skills">
+      <section class="skills" id="skills">
         <div class="inner">
           <h2>Skills</h2>
 
@@ -91,35 +91,9 @@
               <img src="./images/logo-figma.svg" alt="figma" />
             </div>
           </div>
-
-          <!-- <ul>
-            <li><img src="./images/logo-html.svg" alt="html" /></li>
-            <li><img src="./images/logo-css.svg" alt="css" /></li>
-            <li>
-              <img src="./images/logo-javascript.svg" alt="javascript" />
-            </li>
-            <li><img src="./images/logo-react.svg" alt="react" /></li>
-            <li>
-              <img src="./images/logo-nextjs.svg" alt="next.js" />
-            </li>
-            <li><img src="./images/logo-vuejs.svg" alt="vue.js" /></li>
-            <li><img src="./images/logo-jquery.svg" alt="jquery" /></li>
-            <li><img src="./images/logo-git.svg" alt="git" /></li>
-            <li><img src="./images/logo-github.svg" alt="github" /></li>
-            <li><img src="./images/logo-mysql.svg" alt="mysql" /></li>
-            <li><img src="./images/logo-mongodb.svg" alt="mongodb" /></li>
-
-            <li><img src="./images/logo-php.svg" alt="php" /></li>
-            <li><img src="./images/logo-sass.svg" alt="sass" /></li>
-            <li>
-              <img src="./images/logo-bootstrap.svg" alt="bootstrap" />
-            </li>
-
-            <li><img src="./images/logo-figma.svg" alt="figma" /></li>
-          </ul> -->
         </div>
       </section>
-      <section class="projects">
+      <section class="projects" id="projects">
         <div class="logo">
           <h2>PROJECTS</h2>
         </div>
@@ -144,7 +118,7 @@
           </section>
 
           <section class="project">
-            <img src="./images/Frame 58.png" alt="" />
+            <img src="./images/img-responsive-project.png" alt="" />
             <div class="description">
               <div class="p-index">PROJECT 02</div>
               <div class="title">반응형 웹사이트 제작</div>
@@ -178,7 +152,7 @@
           </section>
         </div>
       </section>
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="inner">
           <div class="col1">
             <h2>Contact me</h2>
@@ -186,26 +160,32 @@
               <ul>
                 <li><i class="fa-regular fa-at"></i></li>
                 <li><i class="fa-solid fa-phone"></i></li>
-                <li><i class="fa-brands fa-github"></i></li>
+                <!-- <li><i class="fa-brands fa-github"></i></li> -->
               </ul>
             </div>
           </div>
           <div class="col2">
             <form class="contact-form" action="" method="">
-              <input type="text" name="name" placeholder="Your Name" required />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-              />
-              <textarea
-                name="message"
-                rows="5"
-                placeholder="Your Message"
-                required
-              ></textarea>
-              <button type="submit">Send Message</button>
+              <div class="wrapper name-wrapper">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required />
+              </div>
+              <div class="wrapper email-wrapper">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" required />
+              </div>
+              <div class="wrapper message-wrapper">
+                <label for="message">Message</label>
+                <textarea
+                  name="message"
+                  rows="5"
+                  id="message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">
+                SEND YOUR MESSAGE
+              </button>
             </form>
           </div>
         </div>
@@ -213,6 +193,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"></script> -->
     <script src="https://unpkg.com/split-type"></script>
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="./js/script.js"></script>

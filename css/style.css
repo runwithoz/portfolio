@@ -31,9 +31,6 @@ body nav div a {
   font-size: 0.8vw;
   font-weight: 200;
 }
-body .container {
-  overflow-y: auto;
-}
 body .container section {
   width: 100%;
   height: 100vh;
@@ -84,7 +81,7 @@ body .container section.skills {
   justify-content: center;
   align-items: center;
   z-index: 100;
-  padding: 10vh 0;
+  padding: 20vh 0;
 }
 body .container section.skills .inner {
   width: 100%;
@@ -195,7 +192,8 @@ body .container section.contact {
 body .container section.contact .inner {
   display: flex;
   justify-content: center;
-  gap: 5vw;
+  align-items: center;
+  gap: 7rem;
 }
 body .container section.contact .inner .col1 {
   display: flex;
@@ -224,18 +222,76 @@ body .container section.contact .inner .col1 > div ul {
 body .container section.contact .inner .col1 > div ul li {
   display: flex;
   justify-content: center;
-  font-family: "SUIT", sans-serif;
   font-weight: 500;
   line-height: 1.5;
   font-size: 1.3rem;
   letter-spacing: -1px;
+  cursor: pointer;
 }
 body .container section.contact .inner .col1 > div ul li i {
   font-size: 1.7vw;
 }
-body .container section.contact .inner .col2 form {
+body .container section.contact .inner .col2 {
+  font-family: "SUIT Variable", sans-serif;
+}
+body .container section.contact .inner .col2 .contact-form {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+}
+body .container section.contact .inner .col2 .contact-form .wrapper {
+  padding-bottom: 0.3rem;
+}
+body .container section.contact .inner .col2 .contact-form .wrapper label {
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding-right: 0.3rem;
+}
+body .container section.contact .inner .col2 .contact-form .wrapper input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: "SUIT Variable", sans-serif;
+}
+body .container section.contact .inner .col2 .contact-form .wrapper.name-wrapper {
+  border-bottom: 1px solid #000000;
+}
+body .container section.contact .inner .col2 .contact-form .wrapper.email-wrapper {
+  border-bottom: 1px solid #000000;
+}
+body .container section.contact .inner .col2 .contact-form .wrapper.message-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+body .container section.contact .inner .col2 .contact-form .wrapper.message-wrapper label {
+  padding-bottom: 0.4rem;
+}
+body .container section.contact .inner .col2 .contact-form .wrapper.message-wrapper textarea {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  border-bottom: 1px solid #000000;
+  font-family: "SUIT Variable", sans-serif;
+  resize: none;
+}
+body .container section.contact .inner .col2 .contact-form .submit-btn {
+  background-color: #000000;
+  border: 1px solid #000000;
+  color: #ffffff;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+body .container section.contact .inner .col2 .contact-form .submit-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* .bg {
@@ -295,4 +351,26 @@ body .container section.contact .inner .col2 form {
 .highlight {
   background-color: rgba(255, 251, 125, 0.5);
   border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 전체 스크롤바 */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* 스크롤바의 트랙 */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* 스크롤바의 핸들 */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* 핸들이 호버될 때 */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }/*# sourceMappingURL=style.css.map */

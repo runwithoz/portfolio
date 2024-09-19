@@ -1,7 +1,22 @@
-if ("scrollRestoration" in history) {
-  history.scrollRestoration = "manual";
+const lenis = new Lenis();
+
+lenis.on("scroll", (e) => {
+  console.log(e);
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
 }
-window.scrollTo(0, 0);
+
+requestAnimationFrame(raf);
+
+window.addEventListener("load", () => {
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  window.scrollTo(0, 0);
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,36 +31,37 @@ gsap.from(".word .char", 1.5, {
   ease: "power4.inOut",
 });
 
-const aboutText = new SplitType(".about p");
-
-gsap.from(aboutText.chars, {
+let aboutTl = gsap.timeline({
   scrollTrigger: {
     trigger: ".about",
     pin: true,
     pinSpacing: false,
     start: "top",
     end: "bottom",
-    scrub: true,
+    scrub: false,
     markers: false,
   },
-  opacity: 0.1,
-  duration: 0.01,
-  stagger: 0.1,
 });
 
-/* gsap.from('.skills img', {
-  scrollTrigger: {
-    trigger: '.skills',
-    pin: true,
-    start: 'top',
-    end: 'bottom',
-    scrub: true,
-    markers: false,
-  },
-  duration: 0.3,
+aboutTl.from(".about img", {
+  x: 600,
+  duration: 0.8,
+  ease: "power2.inOut",
+});
+
+const aboutText = new SplitType(".about p");
+
+aboutTl.from(".about p", {
+  opacity: 0,
+  duration: 0.5,
+  delay: 0.2,
+});
+
+aboutTl.from(aboutText.chars, {
   opacity: 0.1,
-  stagger: 0.1,
-}); */
+  duration: 0.01,
+  stagger: 0.007,
+});
 
 gsap.from(".skills .row", {
   scrollTrigger: {
@@ -60,20 +76,7 @@ gsap.from(".skills .row", {
   stagger: 0.1,
 });
 
-const lenis = new Lenis();
-
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
-
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
-gsap.to(".bg", {
+/* gsap.to(".bg", {
   backgroundColor: "#ffffff",
   backgroundImage: "linear-gradient(45deg, #ffffff 0%, #ffffff 100%)",
   scrollTrigger: {
@@ -96,7 +99,7 @@ gsap.to(".blocks-container", {
     end: "bottom",
     markers: false,
   },
-});
+}); */
 
 /* //////////////////////////////////////////////////// */
 
