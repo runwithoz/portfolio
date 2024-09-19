@@ -57,11 +57,11 @@ aboutTl.from(".about p", {
   delay: 0.2,
 });
 
-aboutTl.from(aboutText.chars, {
+/* aboutTl.from(aboutText.chars, {
   opacity: 0.1,
   duration: 0.01,
   stagger: 0.007,
-});
+}); */
 
 gsap.from(".skills .row", {
   scrollTrigger: {
