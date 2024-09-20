@@ -74,6 +74,7 @@ gsap.from(".skills .row", {
   duration: 0.1,
   y: 100,
   stagger: 0.1,
+  ease: "power2.inOut",
 });
 
 /* gsap.to(".bg", {
