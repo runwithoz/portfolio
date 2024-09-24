@@ -100,10 +100,31 @@
           <section class="project">
             <img src="./images/img-museum-project.png" alt="" />
             <div class="description">
-              <div class="p-index">PROJECT 01</div>
+              <div class="top">
+                <div class="p-index">PROJECT 01</div>
+                <div class="links">
+                  <a href="#">GITHUB</a>
+                  <a href="#">VISIT</a>
+                </div>
+              </div>
               <div class="title">박물관 웹사이트 리뉴얼</div>
+              <div class="tech-stack">
+                <ul>
+                  <li><img src="./images/logo-html.svg" alt="html" /></li>
+                  <li><img src="./images/logo-css.svg" alt="css" /></li>
+                  <li><img src="./images/logo-jquery.svg" alt="jquery" /></li>
+                  <li>
+                    <img src="./images/logo-javascript.svg" alt="javascript" />
+                  </li>
+                  <li>
+                    <img src="./images/logo-php.svg" alt="php" />
+                  </li>
+                  <li>
+                    <img src="./images/logo-mysql.svg" alt="mysql" />
+                  </li>
+                </ul>
+              </div>
               <div class="caption">
-                TECH STACK : <br /><br />
                 <ul>
                   <li>
                     <span class="highlighter">jQuery</span>중심으로 인터렉션
@@ -115,16 +136,11 @@
                   </li>
                   <li>
                     PHP와 MySQL을 활용하여 간단한
-                    <span class="highlighter">인증</span>(Authentication) 기능과
-                    <span class="highlighter">게시판</span> CRUD 기능 구현.
+                    <span class="highlighter">인증</span>(Authentication)
+                    <br />기능과 <span class="highlighter">게시판</span> CRUD
+                    기능 구현.
                   </li>
                 </ul>
-                <!-- 수원화성 박물관의 홈페이지를 리뉴얼했습니다. 기능 구현에는
-                jQuery에 초점을 맞췄습니다. 관공서 사이트에 주로 들어가는
-                여러가지 요소들을 구현하기 위해 노력했습니다. 날씨와 미세먼지
-                현황, 오시는 길의 지도를 구현해보면서 다양한 web API들을 어떻게
-                사용해야하는지 배울수 있었습니다. php와 MySQL을 사용하여
-                회원가입/로그인과 게시판의 CRUD 기능을 구현했습니다. -->
               </div>
             </div>
           </section>
@@ -132,16 +148,41 @@
           <section class="project">
             <img src="./images/img-responsive-project.png" alt="" />
             <div class="description">
-              <div class="p-index">PROJECT 02</div>
-              <div class="title">반응형 웹사이트 제작</div>
+              <div class="top">
+                <div class="p-index">PROJECT 02</div>
+                <div class="links">
+                  <a href="#">GITHUB</a>
+                  <a href="#">VISIT</a>
+                </div>
+              </div>
+              <div class="title">반응형 웹사이트</div>
+              <div class="tech-stack">
+                <ul>
+                  <li><img src="./images/logo-html.svg" alt="html" /></li>
+                  <li><img src="./images/logo-css.svg" alt="css" /></li>
+                  <li><img src="./images/logo-jquery.svg" alt="jquery" /></li>
+                  <li>
+                    <img src="./images/logo-javascript.svg" alt="javascript" />
+                  </li>
+                </ul>
+              </div>
               <div class="caption">
-                TECH STACK : <br /><br />수원화성 박물관의 홈페이지를
-                리뉴얼했습니다. 기능 구현에는 jQuery에 초점을 맞췄습니다. 관공서
-                사이트에 주로 들어가는 여러가지 요소들을 구현하기 위해
-                노력했습니다. 날씨와 미세먼지 현황, 오시는 길의 지도를
-                구현해보면서 다양한 web API들을 어떻게 사용해야하는지 배울수
-                있었습니다. php와 MySQL을 사용하여 회원가입/로그인과 게시판의
-                CRUD 기능을 구현했습니다.
+                <ul>
+                  <li>
+                    <span class="highlighter">jQuery</span>중심으로 인터렉션
+                    구현.
+                  </li>
+                  <li>
+                    날씨, 지도 <span class="highlighter">API</span> 이용하여
+                    실시간 데이터 연결.
+                  </li>
+                  <li>
+                    PHP와 MySQL을 활용하여 간단한
+                    <span class="highlighter">인증</span>(Authentication)
+                    <br />기능과 <span class="highlighter">게시판</span> CRUD
+                    기능 구현.
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
@@ -164,6 +205,7 @@
           </section>
         </div>
       </section>
+
       <section class="contact" id="contact">
         <div class="inner">
           <div class="col1">
@@ -179,15 +221,15 @@
           <div class="col2">
             <form class="contact-form" action="" method="">
               <div class="wrapper name-wrapper">
-                <label for="name">Name</label>
+                <label for="name">성함</label>
                 <input type="text" name="name" id="name" required />
               </div>
               <div class="wrapper email-wrapper">
-                <label for="email">Email Address</label>
+                <label for="email">이메일 주소</label>
                 <input type="email" name="email" id="email" required />
               </div>
               <div class="wrapper message-wrapper">
-                <label for="message">Message</label>
+                <label for="message">남기실 메세지</label>
                 <textarea
                   name="message"
                   rows="5"
@@ -195,9 +237,7 @@
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="submit-btn">
-                SEND YOUR MESSAGE
-              </button>
+              <button type="submit" class="submit-btn">메세지 보내기</button>
             </form>
           </div>
         </div>
