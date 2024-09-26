@@ -187,6 +187,7 @@ body {
                     rgba(0, 0, 0, 0.7) 0%,
                     rgba(0, 0, 0, 0) 100%
                   ); */
+                  cursor: pointer;
                   background-color: rgba(0, 0, 0, 0.5);
                   display: flex;
                   justify-content: center;
@@ -213,6 +214,7 @@ body {
                 width: 50rem;
                 height: 24.5rem;
                 position: relative;
+
                 > img {
                   width: 10rem;
                   position: absolute;
@@ -243,6 +245,7 @@ body {
                   display: flex;
                   justify-content: center;
                   align-items: center;
+                  cursor: pointer;
                   /* background: linear-gradient(
                     0deg,
                     rgba(0, 0, 0, 0.7) 0%,
