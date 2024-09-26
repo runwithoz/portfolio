@@ -18,6 +18,7 @@ body {
     font-family: "IBM Plex Mono", monospace;
     z-index: 100;
     mix-blend-mode: difference;
+    opacity: 0;
 
     div {
       display: flex;
@@ -43,6 +44,7 @@ body {
         flex-direction: column;
         justify-content: flex-end;
         padding: 7rem 4rem;
+        /* background-color: #ffffff; */
 
         > div {
           font-size: 10vw;
@@ -152,6 +154,7 @@ body {
           line-height: 0.9;
           font-family: "Bebas Neue", cursive;
           font-weight: 600;
+          /* opacity: 0; */
         }
 
         section {
@@ -227,10 +230,21 @@ body {
               .top {
                 width: 100%;
                 display: flex;
-                justify-content: space-between;
-                padding-bottom: 1.5vh;
                 align-items: center;
+                gap: 1.5rem;
                 .p-index {
+                }
+                .tech-stack {
+                  ul {
+                    display: flex;
+                    li {
+                      display: flex;
+                      align-items: center;
+                      img {
+                        width: 2rem;
+                      }
+                    }
+                  }
                 }
               }
 
@@ -238,23 +252,8 @@ body {
                 font-size: 2.6rem;
                 letter-spacing: -1px;
                 font-weight: 500;
-                margin-top: 2rem;
-              }
-
-              .tech-stack {
-                display: flex;
-                margin: 2rem 0;
-
-                ul {
-                  display: flex;
-                  li {
-                    display: flex;
-                    align-items: center;
-                    img {
-                      width: 3rem;
-                    }
-                  }
-                }
+                margin-top: 1rem;
+                margin-bottom: 4rem;
               }
 
               .caption {
@@ -270,13 +269,14 @@ body {
                       &::before {
                         content: "";
                         position: absolute;
-                        top: 0%;
+                        top: 40%;
                         left: 0;
                         /* transform: translateY(-50%); */
                         width: 100%;
-                        height: 100%;
+                        height: 50%;
                         /* background-color: #fffb7d; */
                         background-color: #e2e2e2;
+                        background-color: #fffc5d;
                         z-index: -10;
                       }
                     }
@@ -324,15 +324,55 @@ body {
                 li {
                   display: flex;
                   justify-content: center;
-
+                  align-items: center;
                   font-weight: 500;
                   line-height: 1.5;
                   font-size: 1.3rem;
                   letter-spacing: -1px;
                   cursor: pointer;
+                  position: relative;
                   i {
-                    font-size: 1.7vw;
+                    font-size: 1rem;
+                    padding-left: 0.5rem;
                   }
+
+                  &::before {
+                    position: absolute;
+                    content: var(--content, "복사완료");
+                    font-size: 0.8rem;
+                    text-align: center;
+                    background-color: #e2e2e2;
+                    top: -3rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 5.5rem;
+                    height: 2rem;
+                    line-height: 2rem;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    letter-spacing: -0.2px;
+                  }
+
+                  &::after {
+                    position: absolute;
+                    content: "";
+                    top: -1rem;
+                    left: 42%;
+                    transform: translateX(-50%);
+                    width: 0px;
+                    height: 0px;
+                    border-style: solid;
+                    border-width: 0 8px 10px 8px;
+                    border-color: transparent transparent #e2e2e2 transparent;
+                    transform: rotate(180deg) translate(-50%, 0);
+                    transition: opacity 0.3s ease;
+                    opacity: 0;
+                  }
+
+                  /* &:hover::before,
+                  &:hover::after {
+                    opacity: 1;
+                  } */
                 }
               }
             }

@@ -18,15 +18,23 @@ window.addEventListener("load", () => {
   window.scrollTo(0, 0);
 });
 
+window.onload = () => {
+  gsap.to("nav", {
+    opacity: 1,
+    duration: 0.8,
+    ease: "power2.inOut",
+  });
+};
+
 gsap.registerPlugin(ScrollTrigger);
 
 const word = new SplitType(".word");
 
-gsap.from(".word .char", 1.5, {
-  delay: 0,
+gsap.from(".word .char", 1, {
+  delay: 0.5,
   y: 700,
   stagger: {
-    amount: 0.5,
+    amount: 0.2,
   },
   ease: "power4.inOut",
 });
@@ -57,117 +65,18 @@ aboutTl.from(".about p", {
   delay: 0.2,
 });
 
-/* aboutTl.from(aboutText.chars, {
-  opacity: 0.1,
-  duration: 0.01,
-  stagger: 0.007,
-}); */
-
-gsap.from(".skills .row", {
+/* gsap.from(".skills .row", {
   scrollTrigger: {
     trigger: ".skills .row",
     start: "top 80%",
     end: "top 20%",
-    scrub: true,
+    scrub: false,
     markers: false,
   },
   duration: 0.1,
   y: 100,
   stagger: 0.1,
   ease: "power2.inOut",
-});
-
-/* gsap.to(".bg", {
-  backgroundColor: "#ffffff",
-  backgroundImage: "linear-gradient(45deg, #ffffff 0%, #ffffff 100%)",
-  scrollTrigger: {
-    trigger: ".hero",
-    start: "top",
-    end: "bottom",
-    scrub: 0.5,
-    markers: false,
-  },
-});
-
-gsap.to(".blocks-container", {
-  opacity: 0,
-  zIndex: -100,
-  pointerEvents: "none",
-  scrollTrigger: {
-    trigger: ".hero",
-    start: "top",
-    scrub: true,
-    end: "bottom",
-    markers: false,
-  },
-}); */
-
-/* //////////////////////////////////////////////////// */
-
-/* window.addEventListener('DOMContentLoaded', () => {
-  const blockContainer = document.getElementById('blocks');
-  const blockSize = 50;
-  const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
-  const numCols = Math.ceil(screenWidth / blockSize);
-  const numRows = Math.ceil(screenHeight / blockSize);
-  const numBlocks = numCols * numRows;
-
-  function createBlocks() {
-    for (let i = 0; i < numBlocks; i++) {
-      const block = document.createElement('div');
-      block.classList.add('block');
-      block.dataset.index = i;
-      block.addEventListener('mousemove', highlightRandomNeighbors);
-      blockContainer.appendChild(block);
-    }
-  }
-
-  function highlightRandomNeighbors() {
-    const index = parseInt(this.dataset.index);
-    const neighbors = [
-      index - 1,
-      index + 1,
-      index - numCols,
-      index + numCols,
-      index - numCols - 1,
-      index - numCols + 1,
-      index + numCols - 1,
-      index + numCols + 1,
-    ].filter(
-      (i) =>
-        i >= 0 &&
-        i < numBlocks &&
-        Math.abs((i % numCols) - (index % numCols)) <= 1
-    );
-
-    this.classList.add('highlight');
-    setTimeout(() => {
-      this.classList.remove('highlight');
-    }, 500);
-
-    shuffleArray(neighbors)
-      .slice(0, 1)
-      .forEach((nIndex) => {
-        const neighbor = blockContainer.children[nIndex];
-        if (neighbor) {
-          neighbor.classList.add('highlight');
-          setTimeout(() => {
-            neighbor.classList.remove('highlight');
-          }, 500);
-        }
-      });
-  }
-
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  createBlocks();
 }); */
 
 const pSections = gsap.utils.toArray(".projects section");
@@ -184,7 +93,18 @@ let pScrollTween = gsap.to(pSections, {
   },
 });
 
-gsap.to(".logo", {
+let logoTl = gsap.timeline({});
+
+/* logoTl.to(".logo", {
+  opacity: 1,
+  duration: 1.5,
+  ease: "power2.inOut",
+  scrollTrigger: {
+    trigger: ".logo",
+  },
+  delay: 1,
+}); */
+logoTl.to(".logo", {
   fontSize: "2.5rem",
   top: "4rem",
   scrollTrigger: {
@@ -220,3 +140,33 @@ document.querySelectorAll(".project").forEach((el) => {
     },
   });
 });
+
+/*      contact 섹션 클립보드에 카피 기능       */
+
+document
+  .querySelector(".contact .email")
+  .addEventListener("click", function () {
+    // <span> 요소의 텍스트 가져오기
+    const textToCopy = document.querySelector(
+      ".contact .email > span"
+    ).innerText;
+
+    // 클립보드에 복사
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => {
+        document
+          .querySelector(".contact .email")
+          .style.setProperty("--content", `"복사 완료"`);
+
+        // 2초 후 "복사하기"로 다시 변경
+        setTimeout(() => {
+          document
+            .querySelector(".contact .email")
+            .style.setProperty("--content", `"복사하기"`);
+        }, 2000);
+      })
+      .catch((err) => {
+        console.error("클립보드 복사 실패:", err);
+      });
+  });
