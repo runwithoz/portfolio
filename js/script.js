@@ -155,16 +155,14 @@ document
     navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
-        document
-          .querySelector(".contact .email")
-          .style.setProperty("--content", `"복사 완료"`);
+        document.querySelector(".contact .fa-copy").classList.add("hide");
+        document.querySelector(".contact .fa-check").classList.add("show");
 
         // 2초 후 "복사하기"로 다시 변경
         setTimeout(() => {
-          document
-            .querySelector(".contact .email")
-            .style.setProperty("--content", `"복사하기"`);
-        }, 2000);
+          document.querySelector(".contact .fa-copy").classList.remove("hide");
+          document.querySelector(".contact .fa-check").classList.remove("show");
+        }, 1000);
       })
       .catch((err) => {
         console.error("클립보드 복사 실패:", err);
