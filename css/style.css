@@ -72,7 +72,6 @@ body .container section.about .inner {
 }
 body .container section.about .inner img {
   width: 30vw;
-  height: 30vw;
 }
 body .container section.skills {
   width: 100%;
@@ -144,6 +143,7 @@ body .container section.projects .logo {
 body .container section.projects section {
   position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
@@ -151,13 +151,49 @@ body .container section.projects section {
   /* padding: 0 10vw; */
   scroll-snap-align: start;
   box-sizing: border-box;
-  gap: 5rem;
-  padding: 10rem;
+  gap: 2rem;
 }
-body .container section.projects section.project > img {
-  width: 40rem;
-  /* margin-left: 5rem; */
+body .container section.projects section.project .img-wrapper {
+  position: relative;
+}
+body .container section.projects section.project .img-wrapper > img {
+  width: 50rem;
   flex: 1;
+}
+body .container section.projects section.project .img-wrapper > img.img-3 {
+  width: 15rem;
+}
+body .container section.projects section.project .img-wrapper .links-wrapper {
+  position: absolute;
+  top: 1.6rem;
+  left: 5.7rem;
+  width: 38.5rem;
+  height: 24.2rem;
+  opacity: 0;
+  transition: 0.2s;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1rem 2rem;
+}
+body .container section.projects section.project .img-wrapper .links-wrapper .size-notice {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 200;
+  letter-spacing: -0.3px;
+}
+body .container section.projects section.project .img-wrapper .links-wrapper .links {
+  display: flex;
+  gap: 2rem;
+  padding: 0.4rem;
+}
+body .container section.projects section.project .img-wrapper .links-wrapper .links > a i {
+  color: #ffffff;
+  font-size: 1.7rem;
+}
+body .container section.projects section.project .img-wrapper .links-wrapper:hover {
+  opacity: 1;
 }
 body .container section.projects section.project .description {
   display: flex;
@@ -172,36 +208,6 @@ body .container section.projects section.project .description .top {
   justify-content: space-between;
   padding-bottom: 1.5vh;
   align-items: center;
-}
-body .container section.projects section.project .description .top .links {
-  display: flex;
-  gap: 0.8rem;
-  /* button {
-    background-color: #fffb7d;
-    cursor: pointer;
-    opacity: 0.4;
-    &.visit {
-      img {
-        width: 1.25rem;
-      }
-    }
-    &.github {
-      img {
-        width: 2.5rem;
-      }
-    }
-    &:hover {
-      opacity: 1;
-    }
-  } */
-}
-body .container section.projects section.project .description .top .links a {
-  color: #ffffff;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 1rem;
-  background-color: #000000;
-  padding: 0 0.3rem;
-  border: 1px solid #000000;
 }
 body .container section.projects section.project .description .title {
   font-size: 2.6rem;

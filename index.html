@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>block reveal landing page animation</title>
+    <title>KHM Portfolio</title>
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
@@ -54,7 +54,7 @@
       </section>
       <section class="about" id="about">
         <div class="inner">
-          <img src="https://runwithoz.github.io/ex_img/picture.jpg" alt="" />
+          <img src="./images/img-about.jpg" alt="" />
           <p>
             빠르게 변화하는 웹 환경에 발맞춰 끊임없이 성장하는 개발자가
             되겠습니다. 적는중..
@@ -98,14 +98,13 @@
           <section class="intro"></section>
 
           <section class="project">
-            <img src="./images/img-museum-project.png" alt="" />
             <div class="description">
               <div class="top">
                 <div class="p-index">PROJECT 01</div>
-                <div class="links">
+                <!-- <div class="links">
                   <a href="#">GITHUB</a>
                   <a href="#">VISIT</a>
-                </div>
+                </div> -->
               </div>
               <div class="title">박물관 웹사이트 리뉴얼</div>
               <div class="tech-stack">
@@ -143,17 +142,24 @@
                 </ul>
               </div>
             </div>
+            <div class="img-wrapper">
+              <img src="./images/img-museum-project.png" alt="" />
+              <div class="links-wrapper">
+                <div class="size-notice">DESKTOP ONLY</div>
+                <div class="links">
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="#"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
           </section>
 
           <section class="project">
-            <img src="./images/img-responsive-project.png" alt="" />
             <div class="description">
               <div class="top">
                 <div class="p-index">PROJECT 02</div>
-                <div class="links">
-                  <a href="#">GITHUB</a>
-                  <a href="#">VISIT</a>
-                </div>
               </div>
               <div class="title">반응형 웹사이트</div>
               <div class="tech-stack">
@@ -169,38 +175,82 @@
               <div class="caption">
                 <ul>
                   <li>
-                    <span class="highlighter">jQuery</span>중심으로 인터렉션
-                    구현.
+                    <span class="highlighter">javascript</span>와
+                    <span class="highlighter">jQuery</span>로 인터렉션 구현.
                   </li>
                   <li>
-                    날씨, 지도 <span class="highlighter">API</span> 이용하여
-                    실시간 데이터 연결.
+                    <span class="highlighter">Swiper</span> 라이브러리 이용하여
+                    슬라이드 배너 구현.
                   </li>
                   <li>
-                    PHP와 MySQL을 활용하여 간단한
-                    <span class="highlighter">인증</span>(Authentication)
-                    <br />기능과 <span class="highlighter">게시판</span> CRUD
-                    기능 구현.
+                    <span class="highlighter">Intersection Observer</span>
+                    사용하여 이용자에게 <br />
+                    시각적 피드백 제공.
                   </li>
                 </ul>
               </div>
             </div>
+            <div class="img-wrapper">
+              <img src="./images/img-responsive-project.png" alt="" />
+              <!-- <div class="links-wrapper">
+                <div class="size-notice">DESKTOP ONLY</div>
+                <div class="links">
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="#"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </div>
+              </div> -->
+            </div>
           </section>
 
           <section class="project">
-            <img src="./images/img-museum-project.png" alt="" />
             <div class="description">
-              <div class="p-index">PROJECT 03</div>
-
-              <div class="title">박물관 웹사이트 리뉴얼</div>
-              <div class="caption">
-                수원화성 박물관의 홈페이지를 리뉴얼했습니다. 기능 구현에는
-                jQuery에 초점을 맞췄습니다. 관공서 사이트에 주로 들어가는
-                여러가지 요소들을 구현하기 위해 노력했습니다. 날씨와 미세먼지
-                현황, 오시는 길의 지도를 구현해보면서 다양한 web API들을 어떻게
-                사용해야하는지 배울수 있었습니다. php와 MySQL을 사용하여
-                회원가입/로그인과 게시판의 CRUD 기능을 구현했습니다.
+              <div class="top">
+                <div class="p-index">PROJECT 03</div>
               </div>
+              <div class="title">리액트 모바일 웹앱</div>
+              <div class="tech-stack">
+                <ul>
+                  <li>
+                    <img src="./images/logo-javascript.svg" alt="javascript" />
+                  </li>
+                  <li><img src="./images/logo-react.svg" alt="react" /></li>
+                  <li><img src="./images/logo-sass.svg" alt="sass" /></li>
+                  <li>
+                    <img
+                      src="./images/logo-react-router.svg"
+                      alt="react-router"
+                    />
+                  </li>
+                </ul>
+              </div>
+              <div class="caption">
+                <ul>
+                  <li>
+                    <span class="highlighter"></span>
+                    <span class="highlighter"></span>
+                  </li>
+                  <li>
+                    <span class="highlighter"></span>
+                  </li>
+                  <li>
+                    <span class="highlighter"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="img-wrapper">
+              <img src="./images/img-react-project.png" class="img-3" alt="" />
+              <!-- <div class="links-wrapper">
+                <div class="size-notice">DESKTOP ONLY</div>
+                <div class="links">
+                  <a href="#"><i class="fa-brands fa-github"></i></a>
+                  <a href="#"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                </div>
+              </div> -->
             </div>
           </section>
         </div>
