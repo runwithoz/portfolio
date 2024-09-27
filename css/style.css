@@ -159,43 +159,130 @@ body .container section.projects section {
 body .container section.projects section.project .img-wrapper {
   position: relative;
 }
-body .container section.projects section.project .img-wrapper > img {
-  width: 50rem;
-  flex: 1;
-}
-body .container section.projects section.project .img-wrapper > img.img-3 {
-  width: 15rem;
-}
-body .container section.projects section.project .img-wrapper .links-wrapper {
+body .container section.projects section.project .img-wrapper.img-wrapper-1 .screen {
   position: absolute;
   top: 1.6rem;
   left: 5.7rem;
   width: 38.5rem;
   height: 24.2rem;
   opacity: 0;
-  transition: 0.2s;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  transition: opacity 0.2s ease;
+  /* background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ); */
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* .size-notice {
-    color: #ffffff;
-    font-size: 2rem;
-    font-weight: 200;
-    letter-spacing: -0.3px;
-  } */
 }
-body .container section.projects section.project .img-wrapper .links-wrapper .links {
+body .container section.projects section.project .img-wrapper.img-wrapper-1 .screen .links {
   display: flex;
   gap: 5rem;
   /* padding: 0.4rem; */
 }
-body .container section.projects section.project .img-wrapper .links-wrapper .links > a i {
+body .container section.projects section.project .img-wrapper.img-wrapper-1 .screen .links > a i {
   color: #ffffff;
   font-size: 2.5rem;
 }
-body .container section.projects section.project .img-wrapper .links-wrapper:hover {
+body .container section.projects section.project .img-wrapper.img-wrapper-1 .screen:hover {
   opacity: 1;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 {
+  width: 50rem;
+  height: 24.5rem;
+  position: relative;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > img {
+  width: 10rem;
+  position: absolute;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > img.tablet {
+  width: 16rem;
+  top: 0;
+  left: 5.2rem;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > img.mobile {
+  width: 8rem;
+  left: 0;
+  bottom: 0.5rem;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > img.desktop {
+  width: 35rem;
+  right: 0;
+  bottom: 0.2rem;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ); */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen:hover {
+  opacity: 1;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen .links {
+  display: flex;
+  /* gap: 5rem; */
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen .links > a i {
+  color: #ffffff;
+  /* font-size: 2.5rem; */
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen.tablet-screen {
+  position: absolute;
+  width: 14.25rem;
+  height: 20.4rem;
+  top: 0.85rem;
+  left: 6.05rem;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen.tablet-screen .links > a i {
+  color: #ffffff;
+  font-size: 2rem;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen.mobile-screen {
+  position: absolute;
+  width: 7.1rem;
+  height: 15.3rem;
+  bottom: 0.85rem;
+  left: 0.45rem;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen.mobile-screen .links > a i {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen.desktop-screen {
+  position: absolute;
+  width: 27rem;
+  height: 16.9rem;
+  bottom: 2.6rem;
+  right: 4rem;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen.desktop-screen .links {
+  display: flex;
+  gap: 2.5rem;
+}
+body .container section.projects section.project .img-wrapper.img-wrapper-2 > .screen.desktop-screen .links > a i {
+  color: #ffffff;
+  font-size: 2.3rem;
+}
+body .container section.projects section.project .img-wrapper > img {
+  width: 50rem;
+  flex: 1;
+}
+body .container section.projects section.project .img-wrapper > img.img-3 {
+  width: 15rem;
 }
 body .container section.projects section.project .description {
   display: flex;
