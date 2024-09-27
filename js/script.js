@@ -1,3 +1,4 @@
+/*      smooth scroll      */
 const lenis = new Lenis();
 
 lenis.on("scroll", (e) => {
@@ -11,6 +12,7 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+/*      새로고침시 페이지 최상단으로       */
 window.addEventListener("load", () => {
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
@@ -18,20 +20,54 @@ window.addEventListener("load", () => {
   window.scrollTo(0, 0);
 });
 
-window.onload = () => {
-  gsap.to("nav", {
-    opacity: 1,
-    duration: 0.8,
-    ease: "power2.inOut",
-  });
-};
+/*      로딩 페이지      */
+function startLoader() {
+  var counterElement = document.querySelector(".counter");
+  var currentValue = 0;
+
+  function updateCounter() {
+    if (currentValue === 100) {
+      return;
+    }
+
+    currentValue += Math.floor(Math.random() * 10) + 1;
+
+    if (currentValue > 100) {
+      currentValue = 100;
+    }
+
+    counterElement.textContent = currentValue;
+
+    var delay = Math.floor(Math.random() * 200) + 50;
+    setTimeout(updateCounter, delay);
+  }
+
+  updateCounter();
+}
+
+startLoader();
+
+let openingTl = gsap.timeline({});
+
+openingTl.to(".counter", 0.3, {
+  delay: 3.5,
+  opacity: 0,
+  onComplete: function () {
+    gsap.set(".counter", { display: "none" });
+  },
+});
+openingTl.to("nav", {
+  opacity: 1,
+  duration: 0.5,
+  ease: "power2.inOut",
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
 const word = new SplitType(".word");
 
-gsap.from(".word .char", 1, {
-  delay: 0.5,
+openingTl.from(".word .char", 1, {
+  delay: 0.1,
   y: 700,
   stagger: {
     amount: 0.2,
@@ -64,20 +100,6 @@ aboutTl.from(".about p", {
   duration: 0.5,
   delay: 0.2,
 });
-
-/* gsap.from(".skills .row", {
-  scrollTrigger: {
-    trigger: ".skills .row",
-    start: "top 80%",
-    end: "top 20%",
-    scrub: false,
-    markers: false,
-  },
-  duration: 0.1,
-  y: 100,
-  stagger: 0.1,
-  ease: "power2.inOut",
-}); */
 
 const pSections = gsap.utils.toArray(".projects section");
 
@@ -139,6 +161,45 @@ document.querySelectorAll(".project").forEach((el) => {
       scrub: 0.5,
     },
   });
+});
+
+/* //////////////////////////// */
+/*             기능             */
+/* //////////////////////////// */
+
+/*      project 섹션 링크 윈도우 팝업      */
+
+const openMobileView = (w, h, url) => {
+  const width = w; // 모바일 해상도 너비 (예: iPhone 12)
+  const height = h; // 모바일 해상도 높이
+
+  // 화면의 중앙에 팝업을 위치시키기 위한 계산
+  const left = screen.width / 2 - width / 2;
+  const top = screen.height / 2 - height / 2;
+
+  window.open(
+    `${url}`,
+    "popup",
+    `width=${width},height=${height},left=${left},top=${top}`
+  );
+};
+
+const project2MobileBtn = document.querySelector(".project-2 .mobile-screen a");
+project2MobileBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  openMobileView(375, 667, "https://runwithoz.github.io/res-web-app/");
+});
+
+const project2TabletBtn = document.querySelector(".project-2 .tablet-screen a");
+project2TabletBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  openMobileView(820, 1180, "https://runwithoz.github.io/res-web-app/");
+});
+
+const project3MobileBtn = document.querySelector(".project-3 .screen a.link");
+project3MobileBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  openMobileView(375, 667, "https://runwithoz.github.io/dalcom/");
 });
 
 /*      contact 섹션 클립보드에 카피 기능       */
