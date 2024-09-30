@@ -119,17 +119,17 @@ body .container section.skills .inner .container {
   align-items: center;
   width: 100%;
   flex: 1;
-  gap: 8vh;
+  gap: 6vh;
   overflow-y: hidden;
 }
 body .container section.skills .inner .container .row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5vw;
+  gap: 4vw;
 }
 body .container section.skills .inner .container .row img {
-  width: 10vw;
+  width: 8vw;
   padding: 0px;
   transition: transform 0.3s ease;
 }
