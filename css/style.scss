@@ -83,7 +83,6 @@ body {
         margin-bottom: 100vh;
         font-size: 3vw;
         font-weight: 600;
-
         padding: 5vw 3vw;
         .inner {
           position: relative;
@@ -92,6 +91,28 @@ body {
           gap: 5vw;
           img {
             width: 30vw;
+          }
+          .profile {
+            position: absolute;
+            bottom: 2.5vh;
+            left: 1.5vw;
+            width: 27vw;
+            height: 10rem;
+            background-color: #131313;
+            border-radius: 0.5rem;
+            display: flex;
+            gap: 5rem;
+            padding: 2rem;
+            .col1,
+            .col2 {
+              color: #ffffff;
+              font-size: 0.9rem;
+              font-weight: 300;
+              text-align: left;
+              ul {
+                list-style: circle;
+              }
+            }
           }
           p {
           }

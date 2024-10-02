@@ -101,6 +101,12 @@ aboutTl.from(".about p", {
   delay: 0.2,
 });
 
+aboutTl.from(".about .profile", {
+  opacity: 0,
+  duration: 0.5,
+  delay: 0.2,
+});
+
 const pSections = gsap.utils.toArray(".projects section");
 
 let pScrollTween = gsap.to(pSections, {

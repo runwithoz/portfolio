@@ -90,6 +90,29 @@ body .container section.about .inner {
 body .container section.about .inner img {
   width: 30vw;
 }
+body .container section.about .inner .profile {
+  position: absolute;
+  bottom: 2.5vh;
+  left: 1.5vw;
+  width: 27vw;
+  height: 10rem;
+  background-color: #131313;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 5rem;
+  padding: 2rem;
+}
+body .container section.about .inner .profile .col1,
+body .container section.about .inner .profile .col2 {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-align: left;
+}
+body .container section.about .inner .profile .col1 ul,
+body .container section.about .inner .profile .col2 ul {
+  list-style: circle;
+}
 body .container section.skills {
   width: 100%;
   display: flex;
