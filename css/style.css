@@ -89,6 +89,7 @@ body .container section.about .inner {
 }
 body .container section.about .inner img {
   width: 30vw;
+  border-radius: 1.5rem;
 }
 body .container section.about .inner .profile {
   position: absolute;
@@ -105,7 +106,7 @@ body .container section.about .inner .profile {
 body .container section.about .inner .profile .col1,
 body .container section.about .inner .profile .col2 {
   color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.8vw;
   font-weight: 300;
   text-align: left;
 }

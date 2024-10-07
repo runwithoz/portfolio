@@ -91,6 +91,7 @@ body {
           gap: 3vw;
           img {
             width: 30vw;
+            border-radius: 1.5rem;
           }
           .profile {
             position: absolute;
@@ -106,7 +107,7 @@ body {
             .col1,
             .col2 {
               color: #ffffff;
-              font-size: 0.9rem;
+              font-size: 0.8vw;
               font-weight: 300;
               text-align: left;
               ul {
