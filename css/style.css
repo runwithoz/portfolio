@@ -85,7 +85,7 @@ body .container section.about .inner {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 5vw;
+  gap: 3vw;
 }
 body .container section.about .inner img {
   width: 30vw;
